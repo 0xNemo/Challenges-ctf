@@ -76,7 +76,7 @@ public void handleKeyInput(String keyPressed) {
 ```
 #### I - Bruteforce (non concluant)
 
-La première idée est de bruteforce l'ouverture du keystore car le password pour ouvrir celui-di est un simple code PIN. Pour cela il fallait identifié l'algorithme utilisé par le keystore comme étant BKS (bouncycastle) et télécharger la lib correspondante : bcprov-jdk18on-177.jar sur https://www.bouncycastle.org/latest_releases.html
+La première idée est de bruteforce l'ouverture du keystore car le password pour ouvrir celui-ci est un simple code PIN. Pour cela il fallait identifié l'algorithme utilisé par le keystore comme étant BKS (bouncycastle) et télécharger la lib correspondante : bcprov-jdk18on-177.jar sur https://www.bouncycastle.org/latest_releases.html
 
 La méthode pour ouvrir le Keystore en modifiant 2-3 trucs:
 
@@ -102,7 +102,7 @@ public boolean retrieveKey(char[] passPhrase) throws KeyStoreException, Unrecove
     }
 ```
 
-Il faut ensuite tester pour tous les codes PIN à partir 4. Méthode qui n'a pas abouti pour ma part, j'ai testé jusqu'à 7 PIN, après cela demandait trop de temps.
+Il faut ensuite tester pour tous les codes PIN à partir 4. Méthode qui n'a pas abouti pour ma part, j'ai testé jusqu'à 7 PIN, après 7 cela demandait trop de temps.
 
 #### II - deuxième méthode
 
@@ -112,12 +112,12 @@ La deuxième méthode consiste à dump la mémoire de l'application :
 - `adb shell am dumpheap [pid] /sdcard/Downloads/calculator.hprof`
 - `adb pull /sdcard/Downloads/calculator.hprof`
 
-On récupère un hprof qu'on ne peut peux pas analyser comme ça, il faut le convertir au bon format hprof : 
+On récupère un hprof qu'on ne peut peux pas analyser comme ça, il faut le convertir au bon format : 
 `hprof-conv ./calculator.hprof android.hprof`
 
 Enfin on peut analyser le fichier avec jhat : `jhat -port 7401 -J-Xmx4G ./android.hprof`
 
-Sur http://localhost:7401 on peut regarder l'état de la mémoire Java au moment où le dump a été généré, l'état des objets java, les liens entre eux etc... on cherche pour KeyPadActivity car cette class possède un attribut `secretKey` qui doit contenir notre clé AES.
+Sur http://localhost:7401 on peut regarder l'état de la mémoire Java au moment où le dump a été généré, l'état des objets java, les liens entre eux etc... on cherche pour KeyPadActivity car cette classe possède un attribut `secretKey` qui doit contenir notre clé AES.
 
 ![Alt text](images/image-1.png)
 ![Alt text](images/image-2.png)
