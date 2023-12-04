@@ -2,13 +2,13 @@
 
 ### Description
 
-```
+
 Notre unité de police a récemment saisi le smartphone d'un individu suspecté d'actions malveillantes et a pu en réaliser un snapshot au moment de son arrestation.
 
 Nous croyons fortement que le suspect a utilisé l'une de ses applications mobiles pour stocker des informations critiques qui nous permettraient de résoudre l'affaire.
 
 Analysez la copie de son smartphone, sous la forme d'un snapshot d'AVD présent sur la machine fournie, pour trouver le flag.
-```
+
 
 ### Challenge
 
@@ -23,7 +23,7 @@ On l'ouvre dans jadx.
 
 Dans le fichier manifest.xml on remarque 2 activités, KeyPadActivity et VaultActivity. Avec le nom de cette deuxième activité et en regardant rapidement les classes Java, on comprend que c'est bien l'application que nous recherchons.
 
-![Alt text](image.png)
+![Alt text](images/image.png)
 
 En reversant l'application on comprend globalement que :
 - les images sont stockées dans le dossier de l'application : `/data/data/com.android.calculator/files`.
@@ -119,9 +119,9 @@ Enfin on peut analyser le fichier avec jhat : `jhat -port 7401 -J-Xmx4G ./androi
 
 Sur http://localhost:7401 on peut regarder l'état de la mémoire Java au moment où le dump a été généré, l'état des objets java, les liens entre eux etc... on cherche pour KeyPadActivity car cette class possède un attribut `secretKey` qui doit contenir notre clé AES.
 
-![Alt text](image-1.png)
-![Alt text](image-2.png)
-![Alt text](image-3.png)
+![Alt text](images/image-1.png)
+![Alt text](images/image-2.png)
+![Alt text](images/image-3.png)
 
 Nous avons la clé AES qui nous intéresse : F697B35B1A40634762796D0F974761A771930923D44150FF39765EAF852CA620
 
@@ -157,4 +157,4 @@ with open('decrypted_image.jpg', 'wb') as file:
 
 FLAG : 
 
-![Alt text](image-4.png)
+![Alt text](images/image-4.png)
