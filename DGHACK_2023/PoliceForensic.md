@@ -144,7 +144,7 @@ key = binascii.unhexlify(hex_key)
 iv = binascii.unhexlify(hex_iv2)
 
 # Read the encrypted image from file
-with open('/home/nemo/Documents/cyber/dghack/policeforensic/apps/com.android.calculator/r/app_image/E4E02A2E33B01B138A46F073BA222060.jpg', 'rb') as file:
+with open('E4E02A2E33B01B138A46F073BA222060.jpg', 'rb') as file:
     ciphertext = file.read()
 
 # Decrypt the image
