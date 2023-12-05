@@ -112,7 +112,7 @@ La deuxième méthode consiste à dump la mémoire de l'application :
 - `adb shell am dumpheap [pid] /sdcard/Downloads/calculator.hprof`
 - `adb pull /sdcard/Downloads/calculator.hprof`
 
-On récupère un hprof qu'on ne peut peux pas analyser comme ça, il faut le convertir au bon format : 
+On récupère un hprof qu'on ne peut pas analyser comme ça, il faut le convertir au bon format : 
 `hprof-conv ./calculator.hprof android.hprof`
 
 Enfin on peut analyser le fichier avec jhat : `jhat -port 7401 -J-Xmx4G ./android.hprof`
