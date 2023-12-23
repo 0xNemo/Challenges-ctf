@@ -9,6 +9,7 @@ Nous croyons fortement que le suspect a utilisé l'une de ses applications mobil
 
 Analysez la copie de son smartphone, sous la forme d'un snapshot d'AVD présent sur la machine fournie, pour trouver le flag.
 
+---
 
 ### Challenge
 
