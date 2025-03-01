@@ -1,2 +1,2 @@
-# CTF-challenges
+# Challenges-ctf
 Some writeups
