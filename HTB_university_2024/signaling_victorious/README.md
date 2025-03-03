@@ -89,7 +89,7 @@ L'issue github : https://github.com/signalapp/Signal-Desktop/issues/7005 nous pe
 
 
 
-### Récupération des messages
+### Récupération de la clé
 
 La clé de la base de données est en faite chiffrée avec une clé contenue dans `encrypted_key` du fichier `Local State` dans le répertoire Signal. La clé de chiffrement est à son tour chiffrée avec la MasterKey de la DPAPI Windows. 
 
