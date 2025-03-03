@@ -111,7 +111,12 @@ msv	DESKTOP-6MBJBAP	frontier-user-01	1d3e3e030ba1a179e1281406efd980bf		ded871d3a
 
 - Avec memprocfs patché : 
 
+![alt text](images/image_13.png)
 
+```
+C:\Users\forensic>pypykatz dpapi minidump M:\name\lsass.exe-736\minidump\minidump.dmp
+[GUID] ab71b6fc-d0b8-4d7b-aa12-6ece19ff1917 [MASTERKEY] 791ca70e650987684b043745c6f4b1c0f97eb2369317302c6c60f9cda19e1b4864fbece48341141501606d8d359ff7f54ee71e4a2b821d3df69582927742809f
+```
 
 MasterKey : `791ca70e650987684b043745c6f4b1c0f97eb2369317302c6c60f9cda19e1b4864fbece48341141501606d8d359ff7f54ee71e4a2b821d3df69582927742809f`
 
