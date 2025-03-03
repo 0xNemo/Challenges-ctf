@@ -187,5 +187,7 @@ mot de passe du C2 : `eNSrj4qHp0pG#075D98@`
 ![alt text](images/image_12.png)
 
 
+> Equipe ESNA, HTB University 2024. Big up à 0xItarow, Lamarr et taytendron qui ont carry
+
 
 
